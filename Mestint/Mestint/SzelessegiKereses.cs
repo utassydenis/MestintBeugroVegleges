@@ -36,20 +36,20 @@ namespace Mestint
         {
             while (Nyilt.Count != 0)
             {
-                Csucs C = Nyilt.Dequeue();
-                List<Csucs> ujCsucsok = C.Kiterjesztes();
-                foreach (Csucs D in ujCsucsok)
+                Csucs kiterjesztesreKivalasztott = Nyilt.Dequeue();
+                List<Csucs> gyerekCsucsok = kiterjesztesreKivalasztott.Kiterjesztes();
+                foreach (Csucs gyerekCsucs in gyerekCsucsok)
                 {
-                    if (D.TerminelisCsucsE())
+                    if (gyerekCsucs.TerminelisCsucsE())
                     {
-                        return D;
+                        return gyerekCsucs;
                     }
-                    if (!Zart.Contains(D) && !Nyilt.Contains(D))
+                    if (!Zart.Contains(gyerekCsucs) && !Nyilt.Contains(gyerekCsucs))
                     {
-                        Nyilt.Enqueue(D);
+                        Nyilt.Enqueue(gyerekCsucs);
                     }
                 }
-                Zart.Add(C);
+                Zart.Add(kiterjesztesreKivalasztott);
             }
             return null;
         }
@@ -57,15 +57,15 @@ namespace Mestint
         {
             while (Nyilt.Count != 0)
             {
-                Csucs C = Nyilt.Dequeue();
-                List<Csucs> ujCsucsok = C.Kiterjesztes();
-                foreach (Csucs D in ujCsucsok)
+                Csucs kiterjesztesreKivalasztott = Nyilt.Dequeue();
+                List<Csucs> gyerekCsucsok = kiterjesztesreKivalasztott.Kiterjesztes();
+                foreach (Csucs gyerekCsucs in gyerekCsucsok)
                 {
-                    if (D.TerminelisCsucsE())
+                    if (gyerekCsucs.TerminelisCsucsE())
                     {
-                        return D;
+                        return gyerekCsucs;
                     }
-                    Nyilt.Enqueue(D);
+                    Nyilt.Enqueue(gyerekCsucs);
                 }
             }
             return null;

@@ -19,7 +19,7 @@ namespace Mestint
         int alma;
         int korte;
         int barack;
-        int iter = 0;
+
         public GyumolcsAllapot(int alma, int korte, int barack)
         {
             this.alma = alma;
@@ -88,7 +88,6 @@ namespace Mestint
 
         public bool Kereskedik(int egyik, int masik)
         {
-            iter++;
             if (!preKereskedik(egyik,masik))
             {
                 return false;
@@ -125,7 +124,7 @@ namespace Mestint
         }
         public override string ToString()
         {
-            return "Alma:" + alma + " Körte:" + korte + " Barack:" + barack + " Iteráció:"+ iter;
+            return "Alma:" + alma + " Körte:" + korte + " Barack:" + barack;
         }
 
         public override bool Equals(object a)
