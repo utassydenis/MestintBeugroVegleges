@@ -10,18 +10,13 @@ namespace Mestint
     {
         public static void Main(string[] args)
         {
+
             Csucs startCsucs;
             GrafKereso kereso;
 
-            startCsucs = new Csucs(new GyumolcsAllapot(13, 46, 59));
-
-
-            Console.WriteLine("\nSzélességi keresés");
+            startCsucs = new Csucs(new TablaJatekAllapot(0, 0, 2));
             kereso = new SzelessegiKereses(startCsucs, true);
             kereso.megoldasKiirasa(kereso.Kereses());
-
-            Console.ReadKey();
-
 
         }
     }
